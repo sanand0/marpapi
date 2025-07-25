@@ -18,13 +18,16 @@ beforeAll(async () => {
 
 describe("worker", () => {
   it("renders markdown as slideshow", async () => {
+    const md = `---\ntitle: T\nauthor: A\nurl: https://x\n---\n# Slide`;
     const res = await mf.dispatchFetch("http://localhost/marp", {
       method: "POST",
-      body: "# Title",
+      body: md,
     });
     const html = await res.text();
     expect(html).toContain("bespoke-marp-parent");
     expect(html).toContain("<h1");
+    expect(html).toContain("og:title");
+    expect(html).toContain("canonical");
   });
 
   it("serves homepage", async () => {
