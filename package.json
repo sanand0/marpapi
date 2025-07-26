@@ -1,0 +1,20 @@
+{
+  "name": "marpapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "wrangler dev",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@marp-team/marp-core": "^4.1.0",
+    "miniflare": "^4.20250712.2",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.26.0"
+  }
+}
